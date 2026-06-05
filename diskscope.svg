@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#232833"/>
+      <stop offset="1" stop-color="#11141a"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="116" height="116" rx="24" fill="url(#bg)" stroke="#3a414f" stroke-width="2"/>
+  <!-- pie slices = disk usage -->
+  <circle cx="64" cy="60" r="34" fill="#2a2f3a"/>
+  <path d="M64 60 L64 26 A34 34 0 0 1 95 75 Z" fill="#3d6ea5"/>
+  <path d="M64 60 L95 75 A34 34 0 0 1 64 94 Z" fill="#46aa6e"/>
+  <path d="M64 60 L64 94 A34 34 0 0 1 33 75 Z" fill="#d6aa3c"/>
+  <circle cx="64" cy="60" r="13" fill="#11141a"/>
+  <!-- usage bars -->
+  <rect x="30" y="104" width="48" height="6" rx="3" fill="#46aa6e"/>
+  <rect x="30" y="104" width="30" height="6" rx="3" fill="#5ac882"/>
+  <rect x="84" y="104" width="14" height="6" rx="3" fill="#d6aa3c"/>
+</svg>

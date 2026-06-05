@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# DiskScope launcher
+DIR="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
+exec python3 "$DIR/diskscope.py" "$@"
