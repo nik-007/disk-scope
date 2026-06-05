@@ -5,3 +5,6 @@ __pycache__/
 venv/
 build/
 dist/
+
+# Local personal notes — not part of the project
+disk-scope-article.md
