@@ -17,8 +17,8 @@ contributions are very welcome as long as they keep it that way.
 ## Development setup
 
 ```bash
-git clone https://github.com/<you>/diskscope.git
-cd diskscope
+git clone https://github.com/nik-007/disk-scope.git
+cd disk-scope
 pip install PyQt5            # or: sudo apt install python3-pyqt5
 ./diskscope                  # run it
 ```

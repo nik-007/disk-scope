@@ -39,7 +39,7 @@ from PyQt5.QtWidgets import (
 
 __version__ = "1.0.0"
 # Set to your public repository URL to show a "project home" link in About.
-HOMEPAGE = ""
+HOMEPAGE = "https://github.com/nik-007/disk-scope"
 
 
 # ---------------------------------------------------------------------------

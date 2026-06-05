@@ -1,6 +1,6 @@
 # DiskScope
 
-[![lint](https://github.com/<you>/diskscope/actions/workflows/lint.yml/badge.svg)](https://github.com/<you>/diskscope/actions/workflows/lint.yml)
+[![lint](https://github.com/nik-007/disk-scope/actions/workflows/lint.yml/badge.svg)](https://github.com/nik-007/disk-scope/actions/workflows/lint.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![python](https://img.shields.io/badge/python-3.x-blue.svg)
 
@@ -45,7 +45,7 @@ bar update instantly, no re-scan.
 Requires **Python 3** and **PyQt5**.
 
 ```bash
-git clone https://github.com/<you>/diskscope.git && cd diskscope
+git clone https://github.com/nik-007/disk-scope.git && cd disk-scope
 pip install PyQt5            # or: sudo apt install python3-pyqt5
 
 ./diskscope                  # scan your home directory
