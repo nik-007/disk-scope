@@ -484,19 +484,28 @@ class BarDelegate(QStyledItemDelegate):
             painter.setBrush(grad)
             painter.drawRoundedRect(fill, 3, 3)
 
-        # Percentage label — skip sub-0.1% noise; sit white inside a wide fill,
-        # else a muted grey just past the bar.
+        # Percentage label — skip sub-0.1% noise. Put it white INSIDE the fill
+        # when there's room, otherwise just past the bar on the dark track in a
+        # light tone, so the text never sits low-contrast on a coloured bar.
         if frac >= 0.001:
+            label = f"{frac * 100:.1f}%"
             f = QFont(option.font)
             ps = f.pointSizeF()
             if ps > 0:
                 f.setPointSizeF(max(6.0, ps - 0.5))
             painter.setFont(f)
-            painter.setPen(QColor(255, 255, 255) if w > 52
-                           else QColor(150, 156, 168))
-            painter.drawText(rect.adjusted(9, 0, 0, 0),
-                             Qt.AlignVCenter | Qt.AlignLeft,
-                             f"{frac * 100:.1f}%")
+            tw = painter.fontMetrics().horizontalAdvance(label)
+            if w >= tw + 16:
+                painter.setPen(QColor(255, 255, 255))
+                painter.drawText(QRect(rect.x() + 8, rect.y(),
+                                       w - 10, rect.height()),
+                                 Qt.AlignVCenter | Qt.AlignLeft, label)
+            else:
+                tx = rect.x() + w + 6
+                painter.setPen(QColor(206, 212, 222))
+                painter.drawText(QRect(tx, rect.y(), rect.right() - tx,
+                                       rect.height()),
+                                 Qt.AlignVCenter | Qt.AlignLeft, label)
         painter.restore()
 
     def sizeHint(self, option, index):
@@ -1012,6 +1021,7 @@ your disk and remove it safely, in one window.</p>
         # Drop selections nested inside another selected directory: deleting the
         # parent already removes them, and counting both would double the size.
         sel_paths = [it.node.path for it in items]
+
         def _nested(p):
             return any(p != q and p.startswith(q.rstrip(os.sep) + os.sep)
                        for q in sel_paths)

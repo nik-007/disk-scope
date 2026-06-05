@@ -1,5 +1,9 @@
 # DiskScope
 
+[![lint](https://github.com/<you>/diskscope/actions/workflows/lint.yml/badge.svg)](https://github.com/<you>/diskscope/actions/workflows/lint.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![python](https://img.shields.io/badge/python-3.x-blue.svg)
+
 **A fast, single-window directory-size analyzer for Linux** — find what's
 eating your disk and remove it safely. Think `ncdu` / `baobab` with the
 single-pane feel of Midnight Commander, focused on one job and built to scale to
@@ -145,6 +149,12 @@ rate with steady I/O would point at a structural hot-spot (look for the
 - **The cache trusts itself.** Results stay in memory until you delete through
   the tool or press **Rescan** (`F5`). If files change *outside* DiskScope, the
   shown sizes can be out of date until you rescan.
+
+## Contributing
+
+Issues and pull requests are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+DiskScope aims to stay a small, single-file, PyQt5-only tool, so changes that
+keep it focused and fast are the easiest to merge.
 
 ## License
 
