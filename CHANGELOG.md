@@ -27,7 +27,7 @@ First public release.
 - Directory-only in-memory model: files are listed on demand instead of being
   stored as objects, so memory scales with the number of directories, not
   files — comfortably handles tens of millions of files.
-- Cyclic GC is disabled during a scan (~2.3× faster at 10M entries and no
+- Cyclic GC is disabled during a scan (~2.5× faster at 10M entries and no
   progressive slowdown).
 
 [1.0.0]: https://github.com/nik-007/disk-scope/releases/tag/v1.0.0

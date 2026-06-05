@@ -102,7 +102,7 @@ Built to scale to tens of millions of files. Three design choices do the work
   free them — and while scanning we keep everything on purpose. Those periodic
   collections are pure overhead whose cost grows with the live-object count;
   this is what made large scans progressively *stutter and slow down* past a few
-  million entries. Disabling GC for the scan gives a **~2.3× speedup at 10M**
+  million entries. Disabling GC for the scan gives a **~2.5× speedup at 10M**
   and a steady rate. GC is re-enabled the moment the scan finishes.
 
 - **Optional parallel scanning (opt-in).** A pool of threads can walk
